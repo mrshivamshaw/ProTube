@@ -8,7 +8,7 @@ import VideoDetails from './components/VideoDetails'
 
 const App = () => {
   return (
-    <AppContext>
+    <AppContext >
       <BrowserRouter>
       <Header/>
       <Routes>

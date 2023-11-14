@@ -11,6 +11,7 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { FiBell } from "react-icons/fi";
 import { CgClose } from "react-icons/cg";
 import { Context } from "../context/contextApi";
+import Loader from "./Loader";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -37,7 +38,8 @@ const Header = () => {
   const page = pathname?.split("/")?.filter(Boolean)?.[0];
 
   return (
-    <div className="sticky w-screen bg-black h-14 flex flex-row items-center justify-between px-6">
+    <div className="sticky bg-black h-[10vh] flex flex-row items-center justify-between px-6">
+      {loading && <Loader/>}
       <div className="flex items-center justify-center gap-1">
         {mobileMenu ? (
           <SlMenu
@@ -57,13 +59,13 @@ const Header = () => {
           <span className="text-white text-2xl font-semibold lg:block hidden md:block">ProTube</span>
         </Link>
       </div>
-      <div className={focus ? "flex justify-center items-center border-[1.5px] border-[#dbd6d6] rounded-3xl pl-5 transition-all duration-200" : "flex justify-center items-center border border-[#5d5b5b] rounded-3xl pl-5 transition-all duration-200"} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}>
+      <div className={focus ? "flex justify-center items-center border-[1.5px] border-[#className=' border-[#2a58a8] rounded-3xl pl-5 transition-all duration-200 " : " flex justify-center items-center border border-[#5d5b5b] rounded-3xl pl-5 transition-all duration-200"} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}>
         <input
           type="text"
           style={{
             all: "unset",
             color: "white",
-            fontSize: ".7rem",
+            fontSize: ".9rem",
             width: "28vw",
           }}
           placeholder="search"
@@ -72,8 +74,8 @@ const Header = () => {
           onKeyPress={searchQueryHandler}
           
         />
-        <button className="bg-[#303030] h-full p-2 rounded-e-3xl" onClick={()=>searchQueryHandler("searchButton")}>
-          <IoIosSearch className="text-white" />
+        <button className="bg-[#303030] h-[100%] p-4 rounded-e-3xl" onClick={()=>searchQueryHandler("searchButton")}>
+          <IoIosSearch className="text-white text-[100%]" />
         </button>
       </div>
       <div className="flex justify-center items-center gap-3">
