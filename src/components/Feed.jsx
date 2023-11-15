@@ -2,9 +2,7 @@ import React, { useContext } from "react";
 import LeftNav from "./LeftNav";
 import { Context } from "../context/contextApi";
 import VideoCard from "./VideoCard";
-import  "./feed.css";
-import {FiHeart } from "react-icons/fi";
-
+import { FiHeart } from "react-icons/fi";
 
 const Feed = () => {
   const { searchResults, loading } = useContext(Context);
@@ -24,9 +22,11 @@ const Feed = () => {
               );
             })}
         </div>
-        <div className='text-white/75 py-3 text-md font-bold bg-black text-center border-t-[1px] border-[#2a58a8] sticky bottom-0'>Made by SHIVAM with Love<FiHeart className='inline ml-1 fill-red-500'/> </div>
+        <div className="text-white/75 py-3 text-md font-bold bg-black text-center border-t-[1px] rounded-lg border-[#2a58a8] sticky bottom-0">
+          Made by SHIVAM with Love
+          <FiHeart className="inline ml-1 fill-red-500" />{" "}
+        </div>
       </div>
-
     </div>
   );
 };

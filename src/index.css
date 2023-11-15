@@ -57,3 +57,6 @@ body{
     }
 }
 
+.feed::-webkit-scrollbar {
+    display: none; /* Hides the thumb */
+  }

@@ -24,7 +24,8 @@ const Header = () => {
       event?.key === "Enter" ||
       event === "searchButton" 
     ) {
-      navigate(`/search/${searchQuery}`);
+      navigate(`/searchResult/${searchQuery}`);
+
       setSearchQuery("")
       setFocus(false)
     }
