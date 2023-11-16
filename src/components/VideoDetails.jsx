@@ -1,6 +1,6 @@
 import React from "react";
 import { abbreviateNumber } from "js-abbreviation-number";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { Context } from "../context/contextApi";
 import { fetchDataFromApi } from "../utils/api.js";
@@ -28,8 +28,8 @@ const VideoDetails = () => {
     fetchDataFromApi(`video/details/?id=${id}`).then((res) => {
       // console.log(res);
       setVideo(res);
-      setLoading(false);
     });
+    setLoading(false);
   };
 
   const fetchSuggestedVideoDetails = () => {
@@ -64,12 +64,14 @@ const VideoDetails = () => {
           <div className="text-white text-lg font-semibold">{video?.title}</div>
           <div className="flex justify-between items-center">
             <div className="flex justify-center items-center gap-3">
-              <div>
-                <img
-                  className="h-[5vh] w-auto object-cover rounded-full"
-                  src={video?.author?.avatar[0]?.url}
-                />
-              </div>
+              <Link to={`/channel/details/${video?.author?.channelId}`}>
+                <div>
+                  <img
+                    className="h-[5vh] w-auto object-cover rounded-full"
+                    src={video?.author?.avatar[0]?.url}
+                  />
+                </div>
+              </Link>
               <div>
                 <div>{video?.author?.title}</div>
                 <div className="text-xs text-[#d5d5d5]">
@@ -109,13 +111,15 @@ const VideoDetails = () => {
             <h1 className="bg-white/20 px-2 py-2 rounded-2xl text-center w-[10vw] h-auto">comments...</h1>
             {comments?.map((comment) => (
               <div className="flex justify-center items-start gap-3 ">
-                <div className="h-5vh w-[4%] ">
-                  <img
-                    src={comment?.author?.avatar[0]?.url}
-                    alt="avatar"
-                    className="h-[5vh] w-auto object-cover rounded-full"
-                  />
-                </div>
+                <Link to={`/channel/details/${video?.author?.channelId}`}>         
+                  <div className="h-5vh w-[4%] ">
+                    <img
+                      src={comment?.author?.avatar[0]?.url}
+                      alt="avatar"
+                      className="h-[5vh] w-auto object-cover rounded-full"
+                    />
+                  </div>
+                </Link>
                 <div className="flex flex-col justify-start items-start w-[96%]">
                   <div className="flex gap-2 justify-center items-center">
                     <span className="text-base">{comment?.author?.title}</span>

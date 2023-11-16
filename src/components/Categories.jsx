@@ -54,7 +54,7 @@ const Categories = () => {
         <span
         onClick={()=>clickHandler(item)}
           key={index}
-          className={activeCategory === item ? "active flex font-medium items-center justify-center border text-center rounded-2xl py-2 px-3 w-auto bg-white text-black transition-all duration-500" : "flex font-medium text-white items-center justify-center border border-1s text-center rounded-2xl py-2 px-3 w-auto"}
+          className={activeCategory === item ? "active flex font-medium items-center justify-center border border-[#2a58a8] text-center rounded-2xl py-2 px-3 w-auto bg-[#2a58a8] text-black transition-all duration-500" : "flex font-medium text-white items-center justify-center border border-[#0101ff] text-center rounded-2xl py-2 px-3 w-auto"}
           style={{ whiteSpace: "nowrap" }}
         >
           {item}

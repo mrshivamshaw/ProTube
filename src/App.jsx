@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Feed from './components/Feed'
 import SearchResult from './components/SearchResult'
 import VideoDetails from './components/VideoDetails'
+import Channel from './components/Channel'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Feed/>}/>
         <Route path="/searchResult/:searchQuery" element={<SearchResult/>}/>
+        <Route path='/channel/details/:id' element={<Channel/>}/>
         <Route path="/video/:id" element={<VideoDetails/>}/>
       </Routes>
       </BrowserRouter>
