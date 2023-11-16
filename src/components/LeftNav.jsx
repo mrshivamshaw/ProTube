@@ -53,6 +53,12 @@ const LeftNav = () => {
     }
   }
 
+  const itemHandler = (name) =>{
+    if(name === 'New')
+      navigate(`/`);
+    else
+    navigate(`/searchResult/${name}`);
+  }
 
   return (
     <div className='hidden lg:block md:block border-[#2a58a8] border-r-[1px] xl:block h-full bg-black w-[10vw]'>
@@ -65,8 +71,9 @@ const LeftNav = () => {
               type = {item.type === 'New'? "home" : item.name}
               icon = {item.icon}
               action = {()=>{
-                clickHandler(item.name,item.type)
-                navigate('/')
+                clickHandler(item.name,item.type);
+                if(item.type !== 'menu')
+                  itemHandler(item.name)
               }}
               className = {selectedCategory === `${item.name}` ? "bg-white/20":""}
             />

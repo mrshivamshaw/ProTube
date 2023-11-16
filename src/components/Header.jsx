@@ -44,12 +44,12 @@ const Header = () => {
       <div className="flex items-center justify-center gap-1">
         {mobileMenu ? (
           <SlMenu
-            className="block md:hidden lg:hidden text-white cursor-pointer"
+            className="block md:hidden lg:hidden xl:hidden text-white cursor-pointer"
             onClick={mobileMenuHandler}
           />
         ) : (
           <CgClose
-            className="block md:hidden lg:hidden text-white cursor-pointer"
+            className="block md:hidden lg:hidden xl:hidden text-white cursor-pointer"
             onClick={mobileMenuHandler}
           />
         )}

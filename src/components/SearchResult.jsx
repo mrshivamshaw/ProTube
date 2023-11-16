@@ -5,6 +5,7 @@ import {Context} from '../context/contextApi'
 import VideoCard from './VideoCard'
 import LeftNav from './LeftNav'
 import { FiHeart } from "react-icons/fi";
+import Categories from './Categories'
 
 
 
@@ -42,7 +43,8 @@ const SearchResult = () => {
     <div className="h-[90vh] max-w-[100vw] bg-white flex overflow-hidden">
       <LeftNav />
       <div className=" xl:w-[90vw] lg:w-[90vw] md:w-[90vw] w-[100vw] bg-black flex flex-col">
-        <div className="feed max-auto w-full grid sm:grid-cols-1 max-h-[90vh] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center py-3 px-4  align-middle gap-y-9 gap-x-4 overflow-y-scroll overflow-x-hidden">
+        <Categories/>
+        <div className="feed max-auto w-full grid sm:grid-cols-1 h-[90vh] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center py-3 px-4  align-middle gap-y-9 gap-x-4 overflow-y-scroll overflow-x-hidden">
         {result?.map((item) => {
                         if (item?.type !== "video") return false;
                         let video = item.video;
