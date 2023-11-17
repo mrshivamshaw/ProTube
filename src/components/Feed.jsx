@@ -8,11 +8,11 @@ import Categories from "./Categories";
 const Feed = () => {
   const { searchResults, loading } = useContext(Context);
   return (
-    <div className="h-[90vh] max-w-[100vw] bg-white flex overflow-hidden">
+    <div className="realtive h-[90vh] max-w-[100vw] bg-white flex overflow-hidden">
       <LeftNav />
-      <div className=" xl:w-[90vw] lg:w-[90vw] md:w-[90vw] w-[100vw] bg-black flex flex-col">
+      <div className=" xl:w-[85vw] lg:w-[85vw] md:w-[85vw] w-[100vw] bg-black flex flex-col ">
         <Categories/>
-        <div className="feed max-auto w-full grid sm:grid-cols-1 h-[90vh] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center py-3 px-4  align-middle gap-y-9 gap-x-4 overflow-y-scroll overflow-x-hidden">
+        <div className="feed max-auto w-full grid grid-cols-1 h-[90vh] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-center py-3 px-4  align-middle gap-y-9 gap-x-4 overflow-y-scroll overflow-x-hidden">
           {!loading &&
             searchResults.map((item) => {
               if (item.type !== "video") return false;

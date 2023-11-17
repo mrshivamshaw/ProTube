@@ -37,7 +37,7 @@ const categories = [
 ];
 
 const LeftNav = () => {
-  const {selectedCategory,setSelectedCategory} = useContext(Context)
+  const {selectedCategory,setSelectedCategory,mobileMenu} = useContext(Context)
   const navigate = useNavigate()
 
   const clickHandler = (name,type) =>{
@@ -61,28 +61,55 @@ const LeftNav = () => {
   }
 
   return (
-    <div className='hidden lg:block md:block border-[#2a58a8] border-r-[1px] xl:block h-full bg-black w-[10vw]'>
-      <div className='py-3 flex flex-col '>
-        {categories.map((item) =>{
-          return(
-            <React.Fragment
-            key={item.name}>
-            <LeftNavMenuItem
-              type = {item.type === 'New'? "home" : item.name}
-              icon = {item.icon}
-              action = {()=>{
-                clickHandler(item.name,item.type);
-                if(item.type !== 'menu')
-                  itemHandler(item.name)
-              }}
-              className = {selectedCategory === `${item.name}` ? "bg-white/20":""}
-            />
-            {item.divider && <hr className='border-[#2a58a8]'/>}
-            </React.Fragment>)
-        })}
-        <hr className='border-[#2a58a8]'/>
+    <>
+      <div className='hidden lg:block md:block border-[#2a58a8] border-r-[1px] xl:block h-full bg-black w-[15vw]'>
+        <div className='py-3 flex flex-col '>
+          {categories.map((item) =>{
+            return(
+              <React.Fragment
+              key={item.name}>
+              <LeftNavMenuItem
+                type = {item.type === 'New'? "home" : item.name}
+                icon = {item.icon}
+                action = {()=>{
+                  clickHandler(item.name,item.type);
+                  if(item.type !== 'menu')
+                    itemHandler(item.name)
+                }}
+                className = {selectedCategory === `${item.name}` ? "bg-white/20":""}
+              />
+              {item.divider && <hr className='border-[#2a58a8]'/>}
+              </React.Fragment>)
+          })}
+          <hr className='border-[#2a58a8]'/>
+        </div>
       </div>
-    </div>
+      {
+        !mobileMenu && 
+      <div className='block absolute z-10 xl:hidden md:hidden lg:hidden border-[#2a58a8] border-r-[1px]  bg-black w-[100vw] h-[100vh] '>
+        <div className='py-3 flex flex-col overflow-y-hidden'>
+          {categories.map((item) =>{
+            return(
+              <React.Fragment
+              key={item.name}>
+              <LeftNavMenuItem
+                type = {item.type === 'New'? "home" : item.name}
+                icon = {item.icon}
+                action = {()=>{
+                  clickHandler(item.name,item.type);
+                  if(item.type !== 'menu')
+                    itemHandler(item.name)
+                }}
+                className = {selectedCategory === `${item.name}` ? "bg-white/20 text-white":""}
+              />
+              {item.divider && <hr className='border-[#2a58a8]'/>}
+              </React.Fragment>)
+          })}
+          <hr className='border-[#2a58a8]'/>
+        </div>
+      </div>
+      }
+    </>
   )
 }
 

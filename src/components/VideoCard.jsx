@@ -8,12 +8,12 @@ const VideoCard = ({ video }) => {
   return (
     
     <Link to={`/video/${video?.videoId}`}>
-      <div className="text-white flex flex-col justify-start items-start h-auto w-auto rounded-lg gap-2 overflow-hidden">
+      <div className="text-white flex flex-col justify-start items-start sm:h-auto w-[90vw] xl:w-full lg:w-full md:w-full sm:mx-auto rounded-lg gap-2 overflow-hidden">
         <div className="h-auto w-full flex items-center justify-center relative">
           <img
             src={video.thumbnails[0].url}
             alt="jn"
-            className="h-[18vh] w-full rounded-md"
+            className="xl:h-[22vh] lg:h-[22vh] md:h-[18vh] h-[25vh] w-full rounded-md"
           />
           <div className="">
             {video?.lengthSeconds ? (
