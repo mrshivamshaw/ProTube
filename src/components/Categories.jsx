@@ -39,7 +39,7 @@ const Categories = () => {
     "Shwetabh",
   ];
 
-  const [activeCategory, setActiveCategory] = useState("All ");
+  const [activeCategory, setActiveCategory] = useState("All");
   const navigate = useNavigate()
   const clickHandler = (item) => {
     setActiveCategory(item);

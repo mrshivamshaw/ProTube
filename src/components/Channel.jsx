@@ -47,8 +47,8 @@ const Channel = () => {
   const fetchChannelPlaylist = () =>{
     setLoading(true)
     fetchDataFromApi(`channel/playlists/?id=${id}`).then((res)=>{
-      setChannelPlaylist(res.contents)
-      console.log("channelPlaylist",res.contents);
+      setChannelPlaylist(res?.collections)
+      console.log("channelPlaylist",res);
     })
     setLoading(false)
   }
