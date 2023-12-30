@@ -8,12 +8,12 @@ const ChannelVideoCard = ({ videoo,avatar }) => {
   return (
     
     <Link to={`/video/${video?.videoId}`}>
-      <div className="text-white flex flex-col justify-start items-start h-auto w-auto rounded-lg gap-2 overflow-hidden">
+      <div className="text-white flex flex-col justify-start items-start h-auto  w-auto rounded-lg gap-2 overflow-hidden">
         <div className="h-auto w-full flex items-center justify-center relative">
           <img
-            src={video.thumbnails[0].url}
+            src={video.thumbnails[2].url}
             alt="jn"
-            className="h-[18vh] w-full rounded-md"
+            className="xl:h-[24vh] lg:h-[28vh] md:h-[28vh] h-[32vh] w-full rounded-md"
           />
           <div className="">
             {video?.lengthSeconds ? (
@@ -27,7 +27,7 @@ const ChannelVideoCard = ({ videoo,avatar }) => {
             )}
           </div>
         </div>
-        <div className="flex justify-center items-start gap-2">
+        <div className="flex justify-center items-start gap-2 px-2">
           <Link to={`/channel/details/${video?.author?.channelId}`}>
                 <div>
                     <img

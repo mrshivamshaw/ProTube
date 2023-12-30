@@ -12,7 +12,7 @@ const Feed = () => {
       <LeftNav />
       <div className=" xl:w-[85vw] lg:w-[85vw] md:w-[85vw] w-[100vw] bg-black flex flex-col ">
         <Categories/>
-        <div className="feed max-auto w-full grid grid-cols-1 h-[90vh] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-center py-3 px-4  align-middle gap-y-9 gap-x-4 overflow-y-scroll overflow-x-hidden">
+        <div className="feed max-auto w-full flex flex-wrap h-[90vh]  justify-center py-3   items-center gap-5 overflow-y-scroll overflow-x-hidden">
           {!loading &&
             searchResults.map((item) => {
               if (item.type !== "video") return false;

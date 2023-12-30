@@ -8,11 +8,11 @@ import VideoLength from "./VideoLength";
 const SuggestionVideoCard = ({ video }) => {
     return (
         <Link to={`/video/${video?.videoId}`}>
-            <div className="flex mb-3">
-                <div className="relative h-24 lg:h-20 xl:h-24 w-40 min-w-[168px] lg:w-32 lg:min-w-[128px] xl:w-40 xl:min-w-[168px] rounded-xl bg-slate-800 overflow-hidden">
+            <div className="flex flex-col xl:flex-row lg:flex-row md:flex-col mb-3 h-auto">
+                <div className="relative lg:h-20 xl:h-24 w-full min-w-[168px] lg:w-32 lg:min-w-[128px] xl:w-40 md:w-full xl:min-w-[168px] md:h-[13.5rem] h-48 xl:rounded-xl lg:rounded-xl md:rounded-none rounded-none bg-slate-800 overflow-hidden">
                     <img
-                        className="h-full w-full object-cover"
-                        src={video?.thumbnails[0]?.url}
+                        className="h-full  w-full"
+                        src={video?.thumbnails[1]?.url}
                     />
                     {video?.lengthSeconds && (
                         <VideoLength time={video?.lengthSeconds} />
