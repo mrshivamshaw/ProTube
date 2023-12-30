@@ -119,7 +119,7 @@ const VideoDetails = () => {
             <VideoComments video={video} comments={comments} />
           </div>
         </div>
-        <div className="feed h-[90vh] overflow-y-scroll lg:w-[30vw] xl:w-[30vw] w-full w-full pt-3 bg-black">
+        <div className="feed h-[90vh] overflow-y-scroll lg:w-[30vw] xl:w-[30vw] w-full pt-3 bg-black">
           {relatedVideo?.contents?.map((item, index) => {
             if (item?.type !== "video") return false;
             return <SuggestionVideoCard key={index} video={item?.video} />;
