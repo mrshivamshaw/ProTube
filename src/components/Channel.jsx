@@ -64,7 +64,7 @@ const Channel = () => {
   return (
     <div className="h-[90vh] max-w-[100vw] bg-white flex overflow-hidden">
       <LeftNav />
-      <div className=" xl:w-[90vw] h-[90vh] lg:w-[90vw] md:w-[90vw] w-[100vw] bg-black flex flex-col ">
+      <div className=" xl:w-[85vw] h-[90vh] lg:w-[85vw] md:w-[85vw] w-[100vw] bg-black flex flex-col ">
         <Categories />
         <div className="feed pt-6 mx-auto w-full text-white h-[82vh] gap-4 flex flex-col items-center justify-start py-3 xl:px-4 lg:px-4 md:px-4 px-0 overflow-y-scroll overflow-x-hidden">
           {!loading && (

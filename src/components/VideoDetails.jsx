@@ -10,9 +10,10 @@ import { AiFillLike, AiFillDislike, AiOutlineEye } from "react-icons/ai";
 import ReactPlayer from "react-player/youtube";
 import SuggestionVideoCard from "./SuggestionVideoCard.jsx";
 import VideoComments from "./VideoComments.jsx";
+import LeftNav from "./LeftNav.jsx";
 
 const VideoDetails = () => {
-  const { setLoading } = useContext(Context);
+  const { setLoading,mobileMenu } = useContext(Context);
   const [video, setVideo] = useState();
   const [relatedVideo, setRelatedVideo] = useState();
   const [comments, setComments] = useState();
@@ -53,7 +54,11 @@ const VideoDetails = () => {
   };
 
   return (
-    <div className="w-[100vw] h-[90vh] bg-black text-white ">
+<div className={`${mobileMenu ? 'w-[100vw] h-[90vh] bg-black text-white z-10' : 'w-[100vw] h-[90vh] bg-black text-white z-10 overflow-hidden'}`}>
+      <div className="block md:hidden lg:hidden xl:hidden ">
+
+      <LeftNav/>
+      </div>
       <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-start gap-5 xl:px-10 lg:px-10 px-0 bg-black">
         <div className="feed xl:w-[70vw] lg:w-[70vw] md:w-full w-full h-[90vh] flex flex-col gap-3 py-3 overflow-y-scroll overflow-x-hidden">
           <div className="w-full h-full mx-auto">
@@ -115,7 +120,7 @@ const VideoDetails = () => {
               </button>
             </div>
           </div>
-          <div className="w-full ">
+          <div className="w-full">
             <VideoComments video={video} comments={comments} />
           </div>
         </div>

@@ -62,7 +62,7 @@ const LeftNav = () => {
 
   return (
     <>
-      <div className='hidden lg:block md:block border-[#2a58a8] border-r-[1px] xl:block h-full bg-black w-[15vw]'>
+      <div className='hidden lg:block md:block z-50 border-[#2a58a8] border-r-[1px] xl:block h-full bg-black w-[15vw]'>
         <div className='py-3 flex flex-col '>
           {categories.map((item) =>{
             return(
@@ -86,7 +86,7 @@ const LeftNav = () => {
       </div>
       {
         !mobileMenu && 
-      <div className='block absolute z-10 xl:hidden md:hidden lg:hidden border-[#2a58a8] border-r-[1px]  bg-black w-[100vw] h-[90vh] '>
+      <div className='block absolute z-50 xl:hidden md:hidden lg:hidden border-[#2a58a8] border-r-[1px]  bg-black w-[100vw] h-[90vh] '>
         <div className='py-3 flex flex-col overflow-y-hidden'>
           {categories.map((item) =>{
             return(

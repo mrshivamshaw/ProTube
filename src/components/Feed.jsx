@@ -8,7 +8,7 @@ import Categories from "./Categories";
 const Feed = () => {
   const { searchResults, loading } = useContext(Context);
   return (
-    <div className="realtive h-[90vh] max-w-[100vw] bg-white flex overflow-hidden">
+    <div className="realtive h-[90vh] max-w-[100vw] flex overflow-hidden">
       <LeftNav />
       <div className=" xl:w-[85vw] lg:w-[85vw] md:w-[85vw] w-[100vw] bg-black flex flex-col ">
         <Categories/>

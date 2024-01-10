@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="sticky   z-50 bg-black h-[10vh] flex flex-row items-center justify-between px-6 w-[100vw]">
+      <div className="sticky z-50 bg-black h-[10vh] flex flex-row items-center justify-between px-6 w-[100vw]">
         {loading && <Loader/>}
         <div className="flex items-center justify-center gap-1">
           {mobileMenu ? (
