@@ -6,7 +6,7 @@ const options = {
     params: { hl: "en", gl: "US" },
     headers: {
         "X-RapidAPI-Key":
-        'd819a03b75msh804f002157d4f27p13414ajsn4a1feeebc6cb',
+        '5646029cc3msh8a3c3c2eac6330fp1f252ejsnd9d52bb37b18',
         "X-RapidAPI-Host": "youtube138.p.rapidapi.com",
     },
 };
